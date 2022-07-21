@@ -47,17 +47,12 @@ var renderItems = function (data){
   console.log (data.current.wind_speed)
   // insert "if" statement here
   // The "if" statement will check if the text has already been entered. If so, we would have to get the existing text replaced
+  currentWind.innerHTML = data.current.wind_speed;
 
-  if (document.getElementById("enterCity").value.length === 0) {
-
-  } else {
-
-  }
-  
-  currentTemp.append(data.current.temp);
-  currentWind.append(data.current.wind_speed);
-  currentHumidity.append(data.current.humidity);
-  currentUV.append(data.current.uvi);
+  currentTemp.innerText = data.current.temp;
+  currentWind.innerText = data.current.wind_speed;
+  currentHumidity.innerText = data.current.humidity;
+  currentUV.innerText = data.current.uvi;
 };
 
 function currentCondition(){
@@ -293,6 +288,5 @@ searchBtn.addEventListener("click", function (localStorage) {
     currentCondition(lastSearchedCity);
     console.log(`Last searched city: ${lastSearchedCity}`);
 }
-
 
 });
